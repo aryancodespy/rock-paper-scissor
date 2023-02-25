@@ -36,3 +36,12 @@ function playGame(playerSelection, computerSelection){
         alert(`${computerSelection} beats ${playerSelection}. Computer Wins.`);
     };
 };
+
+function game(){
+    for(let round = 1; round <= 5; round++){
+        playGame();
+    }
+
+};
+
+game();
