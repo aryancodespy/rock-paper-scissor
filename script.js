@@ -15,3 +15,8 @@ function getComputerChoice(){
     }
     return choice;
 };
+
+function playGame(playerSelection, computerSelection){
+    playerSelection = prompt("What's your choice? rock, paper, or, scissor : ").toLowerCase();
+    computerSelection = getComputerChoice();
+}
