@@ -21,27 +21,41 @@ function playGame(playerSelection, computerSelection){
     computerSelection = getComputerChoice();
 
     if (playerSelection == computerSelection){
-        alert(`${computerSelection} can't beat ${playerSelection}. It's a tie.`);   
+        alert(`${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`);
     }
     else if (playerSelection == "rock" && computerSelection == "paper"){
-        alert(`${computerSelection} beats ${playerSelection}. Computer Wins.`);
+        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
     }
     else if (playerSelection == "paper" && computerSelection == "scissor"){
-        alert(`${computerSelection} beats ${playerSelection}. Computer Wins.`);
+        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
     }
     else if (playerSelection == "scissor" && computerSelection == "rock"){
-        alert(`${computerSelection} beats ${playerSelection}. Computer Wins.`);
+        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
     }
     else{
-        alert(`${computerSelection} beats ${playerSelection}. Computer Wins.`);
+        alert(`${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`);
     };
 };
 
-function game(){
-    for(let round = 1; round <= 5; round++){
-        playGame();
-    }
+// Access body element
+const body = document.body;
 
-};
+// Game body
+const container = document.createElement("div");
+container.classList.add("container");
 
-game();
+// Add container to the body element
+body.append(container)
+
+// Game Button
+const playRound = document.createElement("button");
+playRound.setAttribute('id', 'startGame');
+playRound.textContent = "Play Game";
+playRound.style.cssText = "border-radius: 50px; padding: 8px; width: 200px;";
+
+// Add button to the container
+container.append(playRound);
+
+// Calling playGame function when button is clicked
+const btn = document.querySelector("#startGame");
+btn.onclick = playGame;
