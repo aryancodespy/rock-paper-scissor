@@ -97,28 +97,36 @@ const body = document.body;
 // Game body
 const container = document.createElement("div");
 container.classList.add("container");
-container.style.cssText = "display: flex; flex-direction: column;";
+container.style.cssText = "display: flex; flex-direction: column; width:100%";;
 
 // Add container to the body element
 body.append(container)
+
+//score board
+const board = document.createElement("div");
+board.classList.add("scoreboard");
+board.style.cssText = "border: 2px solid; border-radius: 10px; width: 80%; max-width: 500px; height: 300px; margin: auto;";
+
+//Add board inside container
+container.appendChild(board);
 
 //Rock Button
 const rock = document.createElement("button");
 rock.setAttribute("id", "rock");
 rock.textContent = "ROCK";
-rock.style.cssText = "border-radius: 50px; padding: 8px; width: 200px; margin: 20px auto";
+rock.style.cssText = "border-radius: 50px; padding: 8px; width: 200px; margin: 20px auto; border: solid black; background-color: gray; color:white; font-weight: 800";
 
 //Paper Button
 const paper = document.createElement("button");
 paper.setAttribute("id", "paper");
 paper.textContent = "PAPER";
-paper.style.cssText = "border-radius: 50px; padding: 8px; width: 200px; margin: 20px auto";
+paper.style.cssText = "border-radius: 50px; padding: 8px; width: 200px; margin: 20px auto; border: solid black; background-color: gray; color:white; font-weight: 800";
 
 //Scissors Button
 const scissor = document.createElement("button");
 scissor.setAttribute("id", "scissor");
 scissor.textContent = "Scissor";
-scissor.style.cssText = "border-radius: 50px; padding: 8px; width: 200px; margin: 20px auto";
+scissor.style.cssText = "border-radius: 50px; padding: 8px; width: 200px; margin: 20px auto; border: solid black; background-color: gray; color:white; font-weight: 800";
 
 
 // Add buttons to the container
