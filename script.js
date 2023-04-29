@@ -110,6 +110,30 @@ board.style.cssText = "border: 2px solid; border-radius: 10px; width: 80%; max-w
 //Add board inside container
 container.appendChild(board);
 
+//Player Score
+const playerScore = document.createElement("p");
+playerScore.setAttribute('id', 'playerScore');
+playerScore.textContent = "Player: "
+playerScore.style.cssText = "margin: 50px 25px";
+
+const spanPlayer = document.createElement("span");
+spanPlayer.setAttribute('id','playerPoint');
+
+playerScore.append(spanPlayer);
+board.append(playerScore)
+
+//Computer Score
+const computerScore = document.createElement("p");
+computerScore.setAttribute('id', 'computerScore');
+computerScore.textContent = "Computer: "
+computerScore.style.cssText = "margin: 50px 25px";
+
+const spanComputer = document.createElement("span");
+spanComputer.setAttribute('id','computerPoint');
+
+computerScore.append(spanComputer);
+board.append(computerScore)
+
 //Rock Button
 const rock = document.createElement("button");
 rock.setAttribute("id", "rock");
