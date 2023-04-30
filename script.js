@@ -1,24 +1,15 @@
 function getComputerChoice(){
     let choice = "";
-    let randomNumber = Math.floor(Math.random(0)*12);
+    let randomNumber = Math.floor(Math.random(0)*3);
     
     switch(randomNumber){
         case 0:
-        case 1:
-        case 2:
-        case 3:
             choice = "rock";
             break;
-        case 4:
-        case 5:
-        case 6:
-        case 7:
+        case 1:
             choice = "paper";
             break;
-        case 8:
-        case 9:
-        case 10:
-        case 11:
+        case 2:
             choice = "scissor";
             break;
     }
