@@ -1,3 +1,22 @@
+//score board
+let player1 = 0;
+let player2 = 0;
+
+//Select Winner
+function winnerCheck(){
+    if (player1 >= 5){
+        message.textContent = "Player Wins";
+        player1 = 0;
+        player2 = 0;
+    }
+    else if (player2 >= 5){
+        message.textContent = "Computer Wins";
+        player1 = 0;
+        player2 = 0;
+    }
+};
+
+//Computers' Choice
 function getComputerChoice(){
     let choice = "";
     let randomNumber = Math.floor(Math.random(0)*3);
@@ -26,16 +45,19 @@ function choiceRock(playerSelection, computerSelection){
     }
     else if (playerSelection == "rock" && computerSelection == "paper"){
         message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
-    }
-    else if (playerSelection == "paper" && computerSelection == "scissor"){
-        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
-    }
-    else if (playerSelection == "scissor" && computerSelection == "rock"){
-        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
+        player2++;;
+        winnerCheck();
     }
     else{
         message.textContent = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`;
+        player1++;
+        winnerCheck();
     };
+
+    //update score
+    spanPlayer.textContent = player1;
+    spanComputer.textContent = player2;
+
 };
 
 //Player Choice Paper
@@ -46,18 +68,21 @@ function choicePaper(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         message.textContent = `${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`;
     }
-    else if (playerSelection == "rock" && computerSelection == "paper"){
-        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
-    }
     else if (playerSelection == "paper" && computerSelection == "scissor"){
         message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
-    }
-    else if (playerSelection == "scissor" && computerSelection == "rock"){
-        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
+        player2++;;
+        winnerCheck();
     }
     else{
         message.textContent = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`;
+        player1++;
+        winnerCheck();
     };
+
+    //update score
+    spanPlayer.textContent = player1;
+    spanComputer.textContent = player2;
+
 };
 
 //Player Choice Scissor
@@ -68,18 +93,20 @@ function choiceScissor(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         message.textContent = `${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`;
     }
-    else if (playerSelection == "rock" && computerSelection == "paper"){
-        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
-    }
-    else if (playerSelection == "paper" && computerSelection == "scissor"){
-        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
-    }
     else if (playerSelection == "scissor" && computerSelection == "rock"){
         message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
+        player2++;;
+        winnerCheck();
     }
     else{
         message.textContent = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`;
+        player1++;
+        winnerCheck();
     };
+
+    //update score
+    spanPlayer.textContent = player1;
+    spanComputer.textContent = player2;
 };
 
 // Access body element
