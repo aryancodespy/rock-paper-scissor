@@ -22,19 +22,19 @@ function choiceRock(playerSelection, computerSelection){
     computerSelection = getComputerChoice();
 
     if (playerSelection == computerSelection){
-        alert(`${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`);
+        message.textContent = `${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`;
     }
     else if (playerSelection == "rock" && computerSelection == "paper"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else if (playerSelection == "paper" && computerSelection == "scissor"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else if (playerSelection == "scissor" && computerSelection == "rock"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else{
-        alert(`${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`);
+        message.textContent = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`;
     };
 };
 
@@ -44,19 +44,19 @@ function choicePaper(playerSelection, computerSelection){
     computerSelection = getComputerChoice();
 
     if (playerSelection == computerSelection){
-        alert(`${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`);
+        message.textContent = `${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`;
     }
     else if (playerSelection == "rock" && computerSelection == "paper"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else if (playerSelection == "paper" && computerSelection == "scissor"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else if (playerSelection == "scissor" && computerSelection == "rock"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else{
-        alert(`${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`);
+        message.textContent = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`;
     };
 };
 
@@ -66,19 +66,19 @@ function choiceScissor(playerSelection, computerSelection){
     computerSelection = getComputerChoice();
 
     if (playerSelection == computerSelection){
-        alert(`${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`);
+        message.textContent = `${computerSelection.toUpperCase()} can't beat ${playerSelection.toUpperCase()}. It's a tie.`;
     }
     else if (playerSelection == "rock" && computerSelection == "paper"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else if (playerSelection == "paper" && computerSelection == "scissor"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else if (playerSelection == "scissor" && computerSelection == "rock"){
-        alert(`${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`);
+        message.textContent = `${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}. Computer Wins.`;
     }
     else{
-        alert(`${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`);
+        message.textContent = `${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}. Player Wins.`;
     };
 };
 
@@ -124,6 +124,13 @@ spanComputer.setAttribute('id','computerPoint');
 
 computerScore.append(spanComputer);
 board.append(computerScore)
+
+//Message area
+const message = document.createElement("p");
+message.setAttribute("id", "msg");
+message.style.cssText = "margin: 50px 25px; text-align: center; ";
+
+board.append(message);
 
 //Rock Button
 const rock = document.createElement("button");
